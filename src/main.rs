@@ -63,7 +63,7 @@ fn try_main() -> Result<(), Box<dyn Error>> {
             "INSERT INTO tiles VALUES (?1, ?2, ?3, ?4)",
             (z, x, (1 << z) - 1 - y, data), // TODO tms
         )
-        .map_err(|e| format!("Error inserting tile: {e}"))?;
+        .map_err(|e| format!("Error inserting tile {z}/{x}/{y}.{ext}: {e}"))?;
 
         min_zoom = Some(min_zoom.map_or(z, |zoom| zoom.min(z)));
 
