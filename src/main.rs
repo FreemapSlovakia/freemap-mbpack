@@ -140,7 +140,7 @@ fn parse_path(entry: &DirEntry) -> Result<(String, u8, u32, u32), ()> {
 
     let y: u32 = parts.get(0).unwrap().parse().map_err(|_| {})?;
     let x: u32 = v.get(1).unwrap().parse().map_err(|_| {})?;
-    let z: u8 = v.get(3).unwrap().parse().map_err(|_| {})?;
+    let z: u8 = v.get(2).unwrap().parse().map_err(|_| {})?;
 
     Ok(((*parts.get(1).unwrap()).to_string(), z, x, y))
 }
