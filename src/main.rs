@@ -12,10 +12,10 @@ fn main() -> ExitCode {
     if let Err(e) = try_main() {
         eprintln!("{e}");
 
-        return ExitCode::FAILURE;
+        ExitCode::FAILURE
+    } else {
+        ExitCode::SUCCESS
     }
-
-    ExitCode::SUCCESS
 }
 
 fn try_main() -> Result<(), Box<dyn Error>> {
