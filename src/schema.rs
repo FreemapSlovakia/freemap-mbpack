@@ -16,7 +16,6 @@ pub fn create_schema(conn: &Connection) -> Result<(), Error> {
           tile_column INTEGER NOT NULL,
           tile_row INTEGER NOT NULL,
           tile_data BLOB NOT NULL,
-          tile_alpha BLOB NOT NULL,
           PRIMARY KEY (zoom_level, tile_column, tile_row)
         )",
         (),
